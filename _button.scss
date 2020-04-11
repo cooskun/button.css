@@ -1,0 +1,72 @@
+@import 'constants';
+@import 'tools';
+
+.button {
+  --outline-color: transparent;
+  --bg: #{ $button-default-bg };
+  --bg-hover: #{ $button-default-hover-bg };
+  --color: #{ $button-default-color };
+  --color-hover: #{ $button-default-hover-color };
+  --padding: #{ $button-default-padding };
+  --font-size: #{ $button-default-font-size };
+  --border-size: #{ $button-default-border-size };
+}
+
+.button {
+  display: inline-block;  
+  // Sizing
+  padding: var(--padding);
+  font-size: var(--font-size);
+  // Typography
+  line-height: $button-line-height;
+  font-family: $button-font-family;
+  font-style: $button-font-style;
+  font-weight: $button-font-weight;
+  // Theming
+  color: var(--color);
+  background-color: var(--bg);
+  // Shaping
+  border-radius: $button-border-radius;
+  border: var(--border-size) solid var(--outline-color);
+  // Animating
+  transition: $button-transition;
+  will-change: color, background-color;
+  // Aligning
+  text-align: $button-text-align;
+  vertical-align: $button-vertical-align;
+  word-break: break-word;
+  // Preventing selection
+  user-select: none;
+
+  // Interaction States
+  &:hover,
+  &:focus {
+    color: var(--color-hover);
+    background-color: var(--bg-hover);
+  }
+
+  // Pointer
+  &:not(:disabled),
+  &:not(.is-disabled) {
+    cursor: pointer;
+  }  
+
+  // Disabled Button
+  &:disabled,
+  &.is-disabled {
+    pointer-events: none;
+    opacity: #{ $button-disabled-opacity };
+  }
+
+  // Block Button
+  &.is-block {
+    display: block;
+    width: 100%;
+  }
+
+  // Sizes
+  @include generate-button-sizes($button-sizes);
+
+  // Themes
+  @include generate-button-themes($button-themes);
+}

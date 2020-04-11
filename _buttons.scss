@@ -1,0 +1,55 @@
+.buttons {
+  display: inline-flex;
+
+  &.is-vertical {
+    flex-direction: column;
+  }
+
+  @include generate-buttons-sizes($button-sizes);
+  
+  @include generate-buttons-themes($button-themes);
+
+  & > .button {
+    --radius: #{ $button-border-radius };
+
+    flex: 1 1 auto;
+    border-radius: var(--radius);
+
+    // Remove border-radiuse for between buttons
+    &:not(:first-child):not(:last-child) {
+      --radius: 0;
+    }
+  }  
+
+  &.is-outlined > .button {
+    @extend .is-outlined;
+  } 
+
+  &.is-vertical > .button {
+    &:first-child {
+      --radius: #{ $button-border-radius } #{ $button-border-radius } 0 0;
+    }
+  
+    &:last-child {
+      --radius: 0 0 #{ $button-border-radius } #{ $button-border-radius };
+    }
+  
+    &:nth-child(n + 2) {
+      border-top: 0;
+    }
+  }
+
+  &:not(.is-vertical) > .button {
+    &:first-child {
+      --radius: #{ $button-border-radius } 0 0 #{ $button-border-radius };    
+    }
+  
+    &:last-child {
+      --radius: 0 #{ $button-border-radius } #{ $button-border-radius } 0;
+    }
+  
+    &:nth-child(n + 2) {
+      border-left: 0;
+    }
+  }  
+}

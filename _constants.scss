@@ -1,0 +1,128 @@
+// Sizing
+$button-default-padding     : null;
+$button-default-font-size   : null;
+$button-default-border-size : null;
+
+$button-small-padding       : null;
+$button-small-font-size     : null;
+$button-small-border-size   : null;
+
+$button-large-padding       : null;
+$button-large-font-size     : null;
+$button-large-border-size   : null;
+
+// Theming
+$button-default-bg          : null;
+$button-default-color       : null;
+$button-default-hover-bg    : null;
+$button-default-hover-color : null;
+
+$button-primary-bg          : null;
+$button-primary-color       : null;
+$button-primary-hover-bg    : null;
+$button-primary-hover-color : null;
+
+$button-secondary-bg          : null;
+$button-secondary-color       : null;
+$button-secondary-hover-bg    : null;
+$button-secondary-hover-color : null;
+
+$button-success-bg            : null;
+$button-success-color         : null;
+$button-success-hover-bg      : null;
+$button-success-hover-color   : null;
+
+$button-info-bg               : null;
+$button-info-color            : null;
+$button-info-hover-bg         : null;
+$button-info-hover-color      : null;
+
+$button-warning-bg            : null;
+$button-warning-color         : null;
+$button-warning-hover-bg      : null;
+$button-warning-hover-color   : null;
+
+$button-danger-bg             : null;
+$button-danger-color          : null;
+$button-danger-hover-bg       : null;
+$button-danger-hover-color    : null;
+
+// Typography
+$button-font-family           : null;
+$button-font-style            : null;
+$button-font-weight           : null;
+$button-line-height           : null;
+$button-text-align            : null;
+$button-vertical-align        : null;
+
+// Shaping
+$button-disabled-opacity      : null;
+$button-border-radius         : null;
+
+// Animation
+$button-transition            : null;
+
+// Mapping Sizes
+$button-sizes : (
+  default: (
+    padding     : $button-default-padding,
+    font-size   : $button-default-font-size,
+    border-size : $button-default-border-size
+  ),
+  small: (
+    padding     : $button-small-padding,
+    font-size   : $button-small-font-size,
+    border-size : $button-small-border-size
+  ),
+  large: (
+    padding     : $button-large-padding,
+    font-size   : $button-large-font-size,
+    border-size : $button-large-border-size 
+  )
+);
+
+// Mapping Themes
+$button-themes : (
+  default: (
+    bg          : $button-default-bg,
+    color       : $button-default-color,
+    bg-hover    : $button-default-hover-bg,
+    color-hover : $button-default-hover-color
+  ),
+  primary: (
+    bg          : $button-primary-bg,
+    color       : $button-primary-color,
+    bg-hover    : $button-primary-hover-bg,
+    color-hover : $button-primary-hover-color
+  ),
+  secondary: (
+    bg          : $button-secondary-bg,
+    color       : $button-secondary-color,
+    bg-hover    : $button-secondary-hover-bg,
+    color-hover : $button-secondary-hover-color
+  ),
+  success: (
+    bg          : $button-success-bg,
+    color       : $button-success-color,
+    bg-hover    : $button-success-hover-bg,
+    color-hover : $button-success-hover-color
+  ),
+  info: (
+    bg          : $button-info-bg,
+    color       : $button-info-color,
+    bg-hover    : $button-info-hover-bg,
+    color-hover : $button-info-hover-color
+  ),
+  warning: (
+    bg          : $button-warning-bg,
+    color       : $button-warning-color,
+    bg-hover    : $button-warning-hover-bg,
+    color-hover : $button-warning-hover-color
+  ),
+  danger: (
+    bg          : $button-danger-bg,
+    color       : $button-danger-color,
+    bg-hover    : $button-danger-hover-bg,
+    color-hover : $button-danger-hover-color
+  )
+);

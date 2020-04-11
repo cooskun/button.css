@@ -1,0 +1,88 @@
+@mixin button-theme($bg, $color, $bg-hover: $bg, $color-hover: $color) {
+  --bg: #{ $bg };
+  --color: #{ $color };
+  --bg-hover: #{ $bg-hover };
+  --color-hover: #{ $color-hover };
+}
+
+@mixin button-outline-theme($outline-color, $default-color) {
+  --bg: transparent;
+  --color: #{ $outline-color };
+  --bg-hover: #{ $outline-color };
+  --color-hover: #{ $default-color };
+  --outline-color: #{ $outline-color };
+}
+
+@mixin button-size($padding, $font-size, $border-size) {
+  --padding: #{ $padding };
+  --font-size: #{ $font-size };
+  --border-size: #{ $border-size };
+}
+
+@mixin generate-button-themes($themes) {
+  @each $theme, $keys in $themes {
+    @if $theme != default {
+      // Flat Themes
+      &.is-#{ $theme } {   
+      
+        @include button-theme(
+          map-get($keys, 'bg'),
+          map-get($keys, 'color'),
+          map-get($keys, 'bg-hover'),
+          map-get($keys, 'color-hover')
+        );
+  
+      }
+
+      // Outlined Themes
+      &.is-#{ $theme }.is-outlined {   
+      
+        @include button-outline-theme(
+          map-get($keys, 'bg'),
+          map-get($keys, 'color')
+        );
+  
+      }
+    }    
+  }
+}
+
+@mixin generate-buttons-themes($themes) {
+  @each $theme, $keys in $themes {
+    @if $theme != default {
+
+      &.is-#{ $theme } > .button {
+        @extend .is-#{ $theme };
+      }
+
+    }
+  }
+}
+
+@mixin generate-button-sizes($sizes) {
+  @each $size, $keys in $sizes {
+    @if $size != default {
+      &.is-#{ $size } {
+
+        @include button-size(
+          map-get($keys, padding),
+          map-get($keys, font-size),
+          map-get($keys, border-size)
+        );
+  
+      }
+    }    
+  }
+}
+
+@mixin generate-buttons-sizes($sizes) {
+  @each $size, $keys in $sizes {
+    @if $size != default {    
+      
+      &.is-#{ $size } > .button {
+        @extend .is-#{ $size };
+      }
+
+    }    
+  }
+}
